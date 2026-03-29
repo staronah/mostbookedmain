@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import HeroSection from '../components/sections/HeroSection';
 import PortfolioGrid from '../components/sections/PortfolioGrid';
 import ServicesPreview from '../components/sections/ServicesPreview';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { TESTIMONIALS } from '../constants';
 import { Quote, Loader2, ShoppingBag, ArrowRight, Package } from 'lucide-react';
 import { db } from '../lib/firebase';

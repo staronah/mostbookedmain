@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Lock, User, ArrowRight, Phone, Eye, EyeOff, MailCheck, AlertCircle, CheckCircle } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
 import { Link, useNavigate } from 'react-router-dom';

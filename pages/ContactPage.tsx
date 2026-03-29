@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, Instagram, Youtube, Twitter, Linkedin, CheckCircle2 } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
 import { db } from '../lib/firebase';

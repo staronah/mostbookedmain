@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { ShoppingBag, ArrowLeft, ChevronLeft, ChevronRight, Loader2, ShoppingCart, Check } from 'lucide-react';
 import { db, auth } from '../lib/firebase';
 import { doc, getDoc } from 'firebase/firestore';

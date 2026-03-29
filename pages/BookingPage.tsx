@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { SERVICES } from '../constants';
 import { CheckCircle, Calendar, User, Briefcase, Camera, Video, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import PrimaryButton from '../ui/PrimaryButton';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../lib/firebase';

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Clock, BookOpen, Star, Award, Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import PDFModal from '../components/ui/PDFModal';

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Loader2, X, Play, ArrowUpRight, Youtube, ExternalLink } from 'lucide-react';
 import { db } from '../../lib/firebase';
 import { collection, getDocs } from 'firebase/firestore';

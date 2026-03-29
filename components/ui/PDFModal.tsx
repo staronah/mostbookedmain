@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { X, Maximize2, Minimize2, Download, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
 

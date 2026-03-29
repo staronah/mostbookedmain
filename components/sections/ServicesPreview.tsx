@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Camera, Youtube, Mic, ChevronDown, Check, Briefcase, Video, Settings, Star, Loader2 } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 import { useNavigate } from 'react-router-dom';

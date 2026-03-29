@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { auth, db } from '../lib/firebase';
 import { onAuthStateChanged, signOut, updatePassword, User as FirebaseUser } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';

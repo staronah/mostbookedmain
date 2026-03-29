@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { ShoppingBag, ArrowRight, Loader2, Package } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../lib/firebase';

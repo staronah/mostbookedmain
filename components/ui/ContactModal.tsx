@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { X, Mail, MessageCircle, Calendar, Send, CheckCircle2 } from 'lucide-react';
 import PrimaryButton from './PrimaryButton';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';

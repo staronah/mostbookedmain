@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ServicesPreview from '../components/sections/ServicesPreview';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Check, TrendingUp, Target, BarChart3 } from 'lucide-react';
 import SEO from '../components/layout/SEO';
 

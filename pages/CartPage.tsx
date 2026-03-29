@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag, Loader2, AlertCircle, X, Clock } from 'lucide-react';
 import { useCart } from '../context/CartContext';

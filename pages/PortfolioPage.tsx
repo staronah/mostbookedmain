@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PortfolioGrid from '../components/sections/PortfolioGrid';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { db } from '../lib/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import SEO from '../components/layout/SEO';
