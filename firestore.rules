@@ -1,0 +1,66 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && 
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' ||
+         (request.auth.token.email == "staronah@gmail.com" && request.auth.token.email_verified == true));
+    }
+
+    // Services: Publicly readable, admin writable
+    match /sites/mostbooked/services/{serviceId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Inquiries: Guest writable, admin readable/writable
+    match /sites/mostbooked/inquiries_contactus/{inquiryId} {
+      allow create: if request.resource.data.keys().hasAll(['serviceTitle', 'userEmail', 'startDate', 'endDate', 'status', 'type', 'createdAt', 'category']) &&
+                      request.resource.data.userEmail is string &&
+                      request.resource.data.serviceTitle is string &&
+                      request.resource.data.status == 'new' &&
+                      request.resource.data.category == 'contactus' &&
+                      (request.resource.data.type == 'email_inquiry' || request.resource.data.type == 'whatsapp_inquiry');
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /public/{userId}/inquiries_contactus/{inquiryId} {
+      allow create: if request.auth.uid == userId;
+      allow read: if request.auth.uid == userId || isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // Mail: Guest writable, admin readable/writable
+    match /sites/mostbooked/mail/{mailId} {
+      allow create: if request.resource.data.keys().hasAll(['fullName', 'email', 'subject', 'message']) &&
+                      request.resource.data.email is string &&
+                      request.resource.data.fullName is string &&
+                      request.resource.data.subject is string &&
+                      request.resource.data.message is string &&
+                      (!('whatsapp' in request.resource.data) || request.resource.data.whatsapp is string) &&
+                      request.resource.data.status == 'new';
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Contact Info: Publicly readable, admin writable
+    match /sites/mostbooked/bookings/contact {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // User profiles
+    match /users/{userId} {
+      allow read, write: if request.auth.uid == userId || isAdmin();
+    }
+    
+    match /public/{userId} {
+      allow read: if true;
+      allow write: if request.auth.uid == userId || isAdmin();
+    }
+  }
+}
